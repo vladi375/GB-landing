@@ -1,0 +1,11 @@
+<svg width="71" height="71" viewBox="0 0 71 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:color-dodge">
+<circle cx="35.6939" cy="35.6941" r="35.2639" transform="rotate(49.8216 35.6939 35.6941)" fill="url(#paint0_diamond_259_32)"/>
+</g>
+<defs>
+<radialGradient id="paint0_diamond_259_32" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(35.6939 35.6941) rotate(90) scale(35.2639)">
+<stop stop-color="white"/>
+<stop offset="1"/>
+</radialGradient>
+</defs>
+</svg>

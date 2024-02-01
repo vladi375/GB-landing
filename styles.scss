@@ -1,0 +1,661 @@
+// mixins
+
+$font-family: 'Inter', sans-serif;
+
+@mixin font($weight, $size, $line-height, $letter-spacing) {
+  font-family: $font-family;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+//
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  @include font(600, 40px, 48.41px, 0.03em);
+  margin: 0;
+}
+
+h2 {
+  @include font(400, 36px, 43.57px, 0);
+  margin: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  width: 100vw;
+}
+
+.wrapper {
+  background-image: url('./assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo__image {
+  margin-top: 42px;
+  margin-left: 40px;
+}
+
+.prize__image {
+  margin-top: 42px;
+  margin-right: 40px;
+}
+
+.main__wrapper {
+  margin: 120px 40px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.section__description {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.section__description-subtext {
+  color: #ffffff;
+}
+
+.section__desctription-logo-mobile {
+  display: none;
+}
+
+.section__description-smalltext {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: #ffffff;
+  @include font(400, 22px, 26.63px, 0);
+}
+
+.section__description-button {
+  width: fit-content;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.section__description-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  color: #ffffff;
+}
+
+.section__description-info-lefttext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  @include font(700, 16px, 19.36px, 0);
+}
+
+.section__description-info-righttext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+  justify-content: space-evenly;
+  gap: 14px;
+  @include font(700, 16px, 19.36px, 0);
+}
+
+.section__description-info-date {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.section__description-info-event {
+  display: flex;
+}
+
+.section__description-info-divider {
+  margin: 0 10px;
+}
+
+.section__description-info-month {
+  @include font(700, 18px, 21.78px, 0);
+  text-align: center;
+}
+
+.section__image-wrapper {
+  display: flex;
+  width: 60%;
+}
+
+.section__image {
+  opacity: 0;
+  animation: fadeInFromTopRight 2000ms ease-out infinite;
+  //animation-delay: 2s;
+}
+
+.section__information-mobile {
+  display: none;
+}
+
+.image__dice1 {
+  position: absolute;
+  top: 10%;
+  left: 26%;
+  animation: moveUpDown 2s ease infinite;
+}
+
+.image__clubs1 {
+  position: absolute;
+  top: 7%;
+  left: 40%;
+  animation: rotationClubs1 2s linear infinite;
+}
+
+.image__dice2 {
+  position: absolute;
+  top: 19%;
+  left: 47%;
+  animation: moveUpDown 2s ease infinite;
+}
+
+.image__hearts {
+  position: absolute;
+  top: 17%;
+  left: 58%;
+  animation: fadeInHearts 2s ease-in-out infinite;
+}
+
+.image__clubs2 {
+  position: absolute;
+  top: 11%;
+  left: 69%;
+  animation: fadeInClubs2 2s ease-in-out infinite;
+}
+
+.image__spades1 {
+  position: absolute;
+  top: 19%;
+  left: 88%;
+  animation: fadeInSpades1 2s ease-in-out infinite;
+}
+
+.image__dice3 {
+  position: absolute;
+  top: 58%;
+  left: 90%;
+  animation: reverseMoveUpDown 2s ease infinite;
+}
+
+.image__diamonds {
+  position: absolute;
+  top: 73%;
+  left: 54%;
+  animation: fadeInDiamonds 2s ease-in-out infinite;
+}
+
+.image__clubs3 {
+  position: absolute;
+  top: 77%;
+  left: 72%;
+  animation: rotationClubs3 2s ease-in-out infinite;
+}
+
+.image__spades2 {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  animation: fadeInSpades2 2s ease-in-out infinite;
+}
+
+.image__spades3 {
+  position: absolute;
+  top: 83%;
+  left: 4%;
+  animation: fadeInSpades3 2s ease-in-out infinite;
+}
+
+.image__dice4 {
+  position: absolute;
+  top: 84%;
+  left: 26%;
+  animation: moveUpDown 2s ease infinite;
+}
+
+.image__dice5 {
+  position: absolute;
+  top: 83%;
+  left: 55%;
+  animation: moveUpDown 2s ease infinite;
+}
+
+// keyframes
+
+@keyframes fadeInFromTopRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) translateY(-100px) rotate(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes reverseMoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes fadeInDiamonds {
+  0%,
+  100% {
+    transform: translateX(100px) translateY(-100px) rotate(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInHearts {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px) translateY(100px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-200px) translateY(100px) rotate(0);
+  }
+  50% {
+    transform: translateY(20px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInClubs2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) translateY(100px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px) translateY(100px) rotate(0);
+  }
+  50% {
+    transform: translateY(20px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotationClubs3 {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px) rotate(0);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotationClubs1 {
+  0% {
+    opacity: 0;
+    transform: translateX(400px) rotate(0);
+  }
+
+  100% {
+    transform: translateX(0px) rotate(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSpades2 {
+  0%,
+  100% {
+    transform: translateX(100px) translateY(-100px) rotate(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20px) rotate(0);
+  }
+}
+
+@keyframes fadeInSpades1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(200px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px) translateY(200px) rotate(0);
+  }
+  50% {
+    transform: translateY(20px) rotate(0deg);
+  }
+}
+
+@keyframes fadeInSpades3 {
+  0% {
+    opacity: 0;
+    transform: translateX(300px) translateY(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(300px) translateY(0) rotate(0deg);
+  }
+}
+
+@include tablet {
+  .wrapper {
+    overflow: visible;
+  }
+}
+
+@include mobile {
+  .wrapper {
+    background: url('./assets/background_mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: visible;
+  }
+
+  .logo__image {
+    content: url('./assets/grand_belaggio_logo_mobile.svg');
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .prize__image {
+    display: none;
+  }
+
+  .main__wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    gap: 35px;
+  }
+
+  .section__description {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .section__description-subtext {
+    margin-bottom: 40px;
+    @include font(400, 22px, 26.63px, 0);
+  }
+
+  .section__desctription-logo-mobile {
+    display: block;
+  }
+
+  .section__description-smalltext {
+    display: none;
+  }
+
+  .section__description-button {
+    display: none;
+  }
+
+  .section__description-info {
+    display: none;
+  }
+
+  .section__image-wrapper {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section__image {
+    animation: none;
+    opacity: 1;
+    width: 379px;
+    height: 194px;
+  }
+
+  .section__information-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section__description-smalltext-mobile {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    @include font(400, 16px, 19.36px, 0);
+    //width: 80%;
+    text-align: center;
+  }
+
+  .section__description-button-mobile {
+    width: fit-content;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 30px;
+  }
+
+  .section__description-info-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .section__description-info-lefttext-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    @include font(700, 11px, 19.36px, 0);
+  }
+
+  .section__description-info-righttext-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    justify-content: space-evenly;
+    gap: 14px;
+    @include font(700, 11px, 19.36px, 0);
+  }
+
+  .section__description-info-date-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .section__description-info-event-mobile {
+    display: flex;
+  }
+
+  .section__description-info-divider-mobile {
+    margin: 0 10px;
+  }
+
+  .section__description-info-month-mobile {
+    @include font(700, 18px, 21.78px, 0);
+    text-align: center;
+  }
+
+  .image__dice1 {
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 26%;
+    animation: none;
+  }
+
+  .image__clubs1 {
+    display: none;
+    position: absolute;
+    top: 7%;
+    left: 40%;
+    animation: none;
+  }
+
+  .image__dice2 {
+    display: none;
+    position: absolute;
+    top: 19%;
+    left: 47%;
+    animation: none;
+  }
+
+  .image__hearts {
+    display: none;
+    position: absolute;
+    top: 17%;
+    left: 58%;
+    animation: none;
+  }
+
+  .image__clubs2 {
+    display: none;
+    position: absolute;
+    top: 11%;
+    left: 69%;
+    animation: none;
+  }
+
+  .image__spades1 {
+    display: none;
+    position: absolute;
+    top: 19%;
+    left: 88%;
+    animation: none;
+  }
+
+  .image__dice3 {
+    display: none;
+    position: absolute;
+    top: 58%;
+    left: 90%;
+    animation: none;
+  }
+
+  .image__diamonds {
+    display: none;
+    position: absolute;
+    top: 73%;
+    left: 54%;
+    animation: none;
+  }
+
+  .image__clubs3 {
+    display: none;
+    position: absolute;
+    top: 77%;
+    left: 72%;
+    animation: none;
+  }
+
+  .image__spades2 {
+    display: none;
+    position: absolute;
+    top: 80%;
+    left: 40%;
+    animation: none;
+  }
+
+  .image__spades3 {
+    display: none;
+    position: absolute;
+    top: 83%;
+    left: 4%;
+    animation: none;
+  }
+
+  .image__dice4 {
+    display: none;
+    position: absolute;
+    top: 84%;
+    left: 26%;
+    animation: none;
+  }
+
+  .image__dice5 {
+    display: none;
+    position: absolute;
+    top: 83%;
+    left: 55%;
+    animation: none;
+  }
+}

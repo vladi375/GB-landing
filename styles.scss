@@ -16,8 +16,20 @@ $font-family: 'Inter', sans-serif;
   }
 }
 
+@mixin iPhone14Pro {
+  @media (min-width: 392px) and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin iPhone12 {
+  @media (min-width: 377px) and (max-width: 391px) {
+    @content;
+  }
+}
+
 @mixin mobile {
-  @media (max-width: 767px) {
+  @media (max-width: 376px) {
     @content;
   }
 }
@@ -75,7 +87,7 @@ header {
   margin: 120px 40px 0;
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 5px;
 }
 
 .section__description {
@@ -94,14 +106,13 @@ header {
 
 .section__description-smalltext {
   margin-top: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #ffffff;
   @include font(400, 22px, 26.63px, 0);
 }
 
-.section__description-button {
-  width: 183px;
-  height: 64px;
+.section__description-button-wrapper {
+  width: inherit;
   background: none;
   color: inherit;
   border: none;
@@ -109,16 +120,23 @@ header {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  text-align: left;
+}
+
+.section__description-button {
+  width: 183px;
+  height: 64px;
 }
 
 .section__description-info {
   display: flex;
   flex-direction: row;
-  margin-top: 40px;
+  margin-top: 35px;
   color: #ffffff;
 }
 
 .section__description-info-lefttext {
+  // width: 37%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -261,6 +279,42 @@ header {
   animation: reverseMoveUpDown 3s ease infinite;
 }
 
+.image__spades-mobile {
+  display: none;
+}
+
+.image__dice1-mobile {
+  display: none;
+}
+
+.image__clubs1-mobile {
+  display: none;
+}
+
+.image__dice2-mobile {
+  display: none;
+}
+
+.image__hearts-mobile {
+  display: none;
+}
+
+.image__spades1-mobile {
+  display: none;
+}
+
+.image__dice3-mobile {
+  display: none;
+}
+
+.image__diamonds-mobile {
+  display: none;
+}
+
+.image__dice5-mobile {
+  display: none;
+}
+
 @include tablet {
   .wrapper {
     overflow: hidden;
@@ -356,9 +410,8 @@ header {
     text-align: center;
   }
 
-  .section__description-button-mobile {
-    width: 127px;
-    height: 44px;
+  .section__description-button-wrapper-mobile {
+    width: inherit;
     background: none;
     color: inherit;
     border: none;
@@ -369,10 +422,15 @@ header {
     margin-top: 20px;
   }
 
+  .section__description-button-mobile {
+    width: 127px;
+    height: 44px;
+  }
+
   .section__description-info-mobile {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin-top: 0;
     color: #ffffff;
@@ -425,106 +483,130 @@ header {
 
   .image__dice1 {
     display: none;
-    position: absolute;
-    top: 10%;
-    left: 26%;
-    animation: none;
   }
 
   .image__clubs1 {
     display: none;
-    position: absolute;
-    top: 7%;
-    left: 40%;
-    animation: none;
   }
 
   .image__dice2 {
     display: none;
-    position: absolute;
-    top: 19%;
-    left: 47%;
-    animation: none;
   }
 
   .image__hearts {
     display: none;
-    position: absolute;
-    top: 17%;
-    left: 58%;
-    animation: none;
   }
 
   .image__clubs2 {
     display: none;
-    position: absolute;
-    top: 11%;
-    left: 69%;
-    animation: none;
   }
 
   .image__spades1 {
     display: none;
-    position: absolute;
-    top: 19%;
-    left: 88%;
-    animation: none;
   }
 
   .image__dice3 {
     display: none;
-    position: absolute;
-    top: 58%;
-    left: 90%;
-    animation: none;
   }
 
   .image__diamonds {
     display: none;
-    position: absolute;
-    top: 73%;
-    left: 54%;
-    animation: none;
   }
 
   .image__clubs3 {
     display: none;
-    position: absolute;
-    top: 77%;
-    left: 72%;
-    animation: none;
   }
 
   .image__spades2 {
     display: none;
-    position: absolute;
-    top: 80%;
-    left: 40%;
-    animation: none;
   }
 
   .image__spades3 {
     display: none;
-    position: absolute;
-    top: 83%;
-    left: 4%;
-    animation: none;
   }
 
   .image__dice4 {
     display: none;
-    position: absolute;
-    top: 84%;
-    left: 26%;
-    animation: none;
   }
 
   .image__dice5 {
     display: none;
+  }
+
+  .spades__mobile {
+    display: none;
+  }
+
+  .image__dice1-mobile {
+    display: block;
     position: absolute;
-    top: 83%;
-    left: 55%;
-    animation: none;
+    top: 34%;
+    left: 5%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__clubs1-mobile {
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 74%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice2-mobile {
+    display: block;
+    position: absolute;
+    top: 61%;
+    left: 75%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__hearts-mobile {
+    display: block;
+    position: absolute;
+    top: 61%;
+    left: 5%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__spades1-mobile {
+    display: block;
+    position: absolute;
+    top: 32%;
+    left: 56%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__spades-mobile {
+    display: block;
+    position: absolute;
+    top: 61%;
+    left: 46%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice3-mobile {
+    display: block;
+    position: absolute;
+    top: 14%;
+    left: 76%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__diamonds-mobile {
+    display: block;
+    position: absolute;
+    top: 22%;
+    left: 4%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice5-mobile {
+    display: block;
+    position: absolute;
+    top: 64%;
+    left: 17.6%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
   }
 }
 
@@ -557,5 +639,603 @@ header {
   }
   50% {
     transform: translateY(-15px);
+  }
+}
+
+@keyframes reverseMoveUpDownMobile {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes moveUpDownMobile {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@include iPhone14Pro {
+  .wrapper {
+    background: url('./assets/background_mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: visible;
+  }
+
+  .logo__image {
+    content: url('./assets/grand_belaggio_logo_mobile.svg');
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .prize__image {
+    display: none;
+  }
+
+  .main__wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    gap: 35px;
+  }
+
+  .section__description {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .section__description-image-mobile {
+    width: 238px;
+    height: 39px;
+  }
+
+  .section__description-subtext {
+    margin-bottom: 30px;
+    @include font(600, 22px, 26.63px, 0);
+  }
+
+  .section__desctription-logo-mobile {
+    display: flex;
+  }
+
+  .section__description-smalltext {
+    display: none;
+  }
+
+  .section__description-button {
+    display: none;
+  }
+
+  .section__description-info {
+    display: none;
+  }
+
+  .section__image-wrapper {
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .section__image {
+    animation: none;
+    opacity: 1;
+    width: 370px;
+    height: 194px;
+  }
+
+  .section__information-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  .section__description-smalltext-mobile {
+    margin-top: 140px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    @include font(400, 16px, 19.36px, 0);
+    //width: 80%;
+    text-align: center;
+  }
+
+  .section__description-button-wrapper-mobile {
+    width: inherit;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 20px;
+  }
+
+  .section__description-button-mobile {
+    width: 127px;
+    height: 44px;
+  }
+
+  .section__description-info-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .section__description-info-lefttext-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    @include font(600, 11px, 13.31px, 0);
+  }
+
+  .section__description-info-righttext-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    justify-content: space-evenly;
+    gap: 7px;
+    @include font(600, 11px, 13.31px, 0);
+  }
+
+  .section__description-info-date-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .section__description-info-day-mobile {
+    width: 18px;
+    height: 12px;
+  }
+
+  .section__description-info-event-mobile {
+    display: flex;
+  }
+
+  .section__description-info-divider-mobile {
+    width: 2px;
+    height: 33.43px;
+    margin: 0 7px;
+  }
+
+  .section__description-info-month-mobile {
+    @include font(700, 12px, 14.52px, 0);
+    text-align: center;
+  }
+
+  .image__dice1 {
+    display: none;
+  }
+
+  .image__clubs1 {
+    display: none;
+  }
+
+  .image__dice2 {
+    display: none;
+  }
+
+  .image__hearts {
+    display: none;
+  }
+
+  .image__clubs2 {
+    display: none;
+  }
+
+  .image__spades1 {
+    display: none;
+  }
+
+  .image__dice3 {
+    display: none;
+  }
+
+  .image__diamonds {
+    display: none;
+  }
+
+  .image__clubs3 {
+    display: none;
+  }
+
+  .image__spades2 {
+    display: none;
+  }
+
+  .image__spades3 {
+    display: none;
+  }
+
+  .image__dice4 {
+    display: none;
+  }
+
+  .image__dice5 {
+    display: none;
+  }
+
+  .spades__mobile {
+    display: none;
+  }
+
+  .image__dice1-mobile {
+    display: block;
+    position: absolute;
+    top: 29%;
+    left: 8%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__clubs1-mobile {
+    display: block;
+    position: absolute;
+    top: 22%;
+    left: 74%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice2-mobile {
+    display: block;
+    position: absolute;
+    top: 53%;
+    left: 75%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__hearts-mobile {
+    display: block;
+    position: absolute;
+    top: 53%;
+    left: 5%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__spades1-mobile {
+    display: block;
+    position: absolute;
+    top: 28%;
+    left: 56%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__spades-mobile {
+    display: block;
+    position: absolute;
+    top: 53%;
+    left: 46%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice3-mobile {
+    display: block;
+    position: absolute;
+    top: 14%;
+    left: 76%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__diamonds-mobile {
+    display: block;
+    position: absolute;
+    top: 19%;
+    left: 7%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice5-mobile {
+    display: block;
+    position: absolute;
+    top: 56%;
+    left: 17.6%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+}
+
+@include iPhone12 {
+  .wrapper {
+    background: url('./assets/background_mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: visible;
+  }
+
+  .logo__image {
+    content: url('./assets/grand_belaggio_logo_mobile.svg');
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+
+  .prize__image {
+    display: none;
+  }
+
+  .main__wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+    gap: 35px;
+  }
+
+  .section__description {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .section__description-image-mobile {
+    width: 238px;
+    height: 39px;
+  }
+
+  .section__description-subtext {
+    margin-bottom: 30px;
+    @include font(600, 22px, 26.63px, 0);
+  }
+
+  .section__desctription-logo-mobile {
+    display: flex;
+  }
+
+  .section__description-smalltext {
+    display: none;
+  }
+
+  .section__description-button {
+    display: none;
+  }
+
+  .section__description-info {
+    display: none;
+  }
+
+  .section__image-wrapper {
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .section__image {
+    animation: none;
+    opacity: 1;
+    width: 370px;
+    height: 194px;
+  }
+
+  .section__information-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  .section__description-smalltext-mobile {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    @include font(400, 16px, 19.36px, 0);
+    //width: 80%;
+    text-align: center;
+  }
+
+  .section__description-button-wrapper-mobile {
+    width: inherit;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-top: 20px;
+  }
+
+  .section__description-button-mobile {
+    width: 127px;
+    height: 44px;
+  }
+
+  .section__description-info-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+    color: #ffffff;
+  }
+
+  .section__description-info-lefttext-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    @include font(600, 11px, 13.31px, 0);
+  }
+
+  .section__description-info-righttext-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    justify-content: space-evenly;
+    gap: 7px;
+    @include font(600, 11px, 13.31px, 0);
+  }
+
+  .section__description-info-date-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .section__description-info-day-mobile {
+    width: 18px;
+    height: 12px;
+  }
+
+  .section__description-info-event-mobile {
+    display: flex;
+  }
+
+  .section__description-info-divider-mobile {
+    width: 2px;
+    height: 33.43px;
+    margin: 0 7px;
+  }
+
+  .section__description-info-month-mobile {
+    @include font(700, 12px, 14.52px, 0);
+    text-align: center;
+  }
+
+  .image__dice1 {
+    display: none;
+  }
+
+  .image__clubs1 {
+    display: none;
+  }
+
+  .image__dice2 {
+    display: none;
+  }
+
+  .image__hearts {
+    display: none;
+  }
+
+  .image__clubs2 {
+    display: none;
+  }
+
+  .image__spades1 {
+    display: none;
+  }
+
+  .image__dice3 {
+    display: none;
+  }
+
+  .image__diamonds {
+    display: none;
+  }
+
+  .image__clubs3 {
+    display: none;
+  }
+
+  .image__spades2 {
+    display: none;
+  }
+
+  .image__spades3 {
+    display: none;
+  }
+
+  .image__dice4 {
+    display: none;
+  }
+
+  .image__dice5 {
+    display: none;
+  }
+
+  .spades__mobile {
+    display: none;
+  }
+
+  .image__dice1-mobile {
+    display: block;
+    position: absolute;
+    top: 34%;
+    left: 5%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__clubs1-mobile {
+    display: block;
+    position: absolute;
+    top: 25%;
+    left: 74%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice2-mobile {
+    display: block;
+    position: absolute;
+    top: 56%;
+    left: 75%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__hearts-mobile {
+    display: block;
+    position: absolute;
+    top: 56%;
+    left: 5%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__spades1-mobile {
+    display: block;
+    position: absolute;
+    top: 32%;
+    left: 56%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__spades-mobile {
+    display: block;
+    position: absolute;
+    top: 56%;
+    left: 46%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice3-mobile {
+    display: block;
+    position: absolute;
+    top: 14%;
+    left: 76%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
+  }
+
+  .image__diamonds-mobile {
+    display: block;
+    position: absolute;
+    top: 22%;
+    left: 4%;
+    animation: moveUpDownMobile 3s ease infinite;
+  }
+
+  .image__dice5-mobile {
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 17.6%;
+    animation: reverseMoveUpDownMobile 3s ease infinite;
   }
 }

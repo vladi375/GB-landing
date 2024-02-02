@@ -14,7 +14,7 @@ h1 {
 
 h2 {
   font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 36px;
   line-height: 43.57px;
   letter-spacing: 0;
@@ -86,7 +86,8 @@ header {
 }
 
 .section__description-button {
-  width: fit-content;
+  width: 183px;
+  height: 64px;
   background: none;
   color: inherit;
   border: none;
@@ -136,6 +137,11 @@ header {
   gap: 4px;
 }
 
+.section__description-info-day {
+  width: 35px;
+  height: 23px;
+}
+
 .section__description-info-event {
   display: flex;
 }
@@ -158,11 +164,6 @@ header {
   width: 60%;
 }
 
-.section__image {
-  opacity: 0;
-  animation: fadeInFromTopRight 2000ms ease-out infinite;
-}
-
 .section__information-mobile {
   display: none;
 }
@@ -171,222 +172,96 @@ header {
   position: absolute;
   top: 10%;
   left: 26%;
-  animation: moveUpDown 2s ease infinite;
+  animation: moveUpDown 3s ease infinite;
 }
 
 .image__clubs1 {
   position: absolute;
   top: 7%;
   left: 40%;
-  animation: rotationClubs1 2s linear infinite;
+  animation: reverseSlowMoveUpDown 3s ease infinite;
 }
 
 .image__dice2 {
   position: absolute;
   top: 19%;
   left: 47%;
-  animation: moveUpDown 2s ease infinite;
+  animation: reverseMoveUpDown 3s ease infinite;
 }
 
 .image__hearts {
   position: absolute;
   top: 17%;
   left: 58%;
-  animation: fadeInHearts 2s ease-in-out infinite;
+  animation: reverseSlowMoveUpDown 3s ease infinite;
 }
 
 .image__clubs2 {
   position: absolute;
   top: 11%;
   left: 69%;
-  animation: fadeInClubs2 2s ease-in-out infinite;
+  animation: moveUpDown 3s ease infinite;
 }
 
 .image__spades1 {
   position: absolute;
   top: 19%;
   left: 88%;
-  animation: fadeInSpades1 2s ease-in-out infinite;
+  animation: reverseSlowMoveUpDown 3s ease infinite;
 }
 
 .image__dice3 {
   position: absolute;
   top: 58%;
   left: 90%;
-  animation: reverseMoveUpDown 2s ease infinite;
+  animation: moveUpDown 3s ease infinite;
 }
 
 .image__diamonds {
   position: absolute;
   top: 73%;
   left: 54%;
-  animation: fadeInDiamonds 2s ease-in-out infinite;
+  animation: reverseSlowMoveUpDown 3s ease infinite;
 }
 
 .image__clubs3 {
   position: absolute;
   top: 77%;
   left: 72%;
-  animation: rotationClubs3 2s ease-in-out infinite;
+  animation: moveUpDown 3s ease infinite;
 }
 
 .image__spades2 {
   position: absolute;
   top: 80%;
   left: 40%;
-  animation: fadeInSpades2 2s ease-in-out infinite;
+  animation: moveUpDown 3s ease infinite;
 }
 
 .image__spades3 {
   position: absolute;
   top: 83%;
   left: 4%;
-  animation: fadeInSpades3 2s ease-in-out infinite;
+  animation: reverseMoveUpDown 3s ease infinite;
 }
 
 .image__dice4 {
   position: absolute;
   top: 84%;
   left: 26%;
-  animation: moveUpDown 2s ease infinite;
+  animation: reverseMoveUpDown 3s ease infinite;
 }
 
 .image__dice5 {
   position: absolute;
-  top: 83%;
+  top: 86%;
   left: 55%;
-  animation: moveUpDown 2s ease infinite;
+  animation: reverseMoveUpDown 3s ease infinite;
 }
 
-@keyframes fadeInFromTopRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100px) translateY(-100px) rotate(-45deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) rotate(0deg);
-  }
-}
-@keyframes moveUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(30px);
-  }
-}
-@keyframes reverseMoveUpDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-}
-@keyframes fadeInDiamonds {
-  0%, 100% {
-    transform: translateX(100px) translateY(-100px) rotate(0);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(20px) rotate(180deg);
-    opacity: 1;
-  }
-}
-@keyframes fadeInHearts {
-  0% {
-    opacity: 0;
-    transform: translateX(-200px) translateY(100px) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-200px) translateY(100px) rotate(0);
-  }
-  50% {
-    transform: translateY(20px) rotate(0deg);
-    opacity: 1;
-  }
-}
-@keyframes fadeInClubs2 {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px) translateY(100px) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50px) translateY(100px) rotate(0);
-  }
-  50% {
-    transform: translateY(20px) rotate(0deg);
-    opacity: 1;
-  }
-}
-@keyframes rotationClubs3 {
-  0% {
-    opacity: 0;
-    transform: translateX(-400px) rotate(0);
-  }
-  100% {
-    transform: translateX(0px) rotate(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-@keyframes rotationClubs1 {
-  0% {
-    opacity: 0;
-    transform: translateX(400px) rotate(0);
-  }
-  100% {
-    transform: translateX(0px) rotate(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-@keyframes fadeInSpades2 {
-  0%, 100% {
-    transform: translateX(100px) translateY(-100px) rotate(0);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(20px) rotate(0);
-  }
-}
-@keyframes fadeInSpades1 {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px) translateY(200px) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-100px) translateY(200px) rotate(0);
-  }
-  50% {
-    transform: translateY(20px) rotate(0deg);
-  }
-}
-@keyframes fadeInSpades3 {
-  0% {
-    opacity: 0;
-    transform: translateX(300px) translateY(0) rotate(0deg);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(0) translateY(0) rotate(0deg);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(300px) translateY(0) rotate(0deg);
-  }
-}
 @media (min-width: 768px) and (max-width: 1023px) {
   .wrapper {
-    overflow: visible;
+    overflow: hidden;
   }
 }
 @media (max-width: 767px) {
@@ -415,18 +290,22 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 15px;
+  }
+  .section__description-image-mobile {
+    width: 238px;
+    height: 39px;
   }
   .section__description-subtext {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-family: "Inter", sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 22px;
     line-height: 26.63px;
     letter-spacing: 0;
   }
   .section__desctription-logo-mobile {
-    display: block;
+    display: flex;
   }
   .section__description-smalltext {
     display: none;
@@ -440,11 +319,12 @@ header {
   .section__image-wrapper {
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
   }
   .section__image {
     animation: none;
     opacity: 1;
-    width: 379px;
+    width: 370px;
     height: 194px;
   }
   .section__information-mobile {
@@ -452,9 +332,10 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 35px;
   }
   .section__description-smalltext-mobile {
-    margin-top: 40px;
+    margin-top: 50px;
     margin-bottom: 30px;
     color: #ffffff;
     font-family: "Inter", sans-serif;
@@ -465,7 +346,8 @@ header {
     text-align: center;
   }
   .section__description-button-mobile {
-    width: fit-content;
+    width: 127px;
+    height: 44px;
     background: none;
     color: inherit;
     border: none;
@@ -473,7 +355,7 @@ header {
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .section__description-info-mobile {
     display: flex;
@@ -488,11 +370,11 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 7px;
     font-family: "Inter", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 11px;
-    line-height: 19.36px;
+    line-height: 13.31px;
     letter-spacing: 0;
   }
   .section__description-info-righttext-mobile {
@@ -501,11 +383,11 @@ header {
     align-items: center;
     width: 60%;
     justify-content: space-evenly;
-    gap: 14px;
+    gap: 7px;
     font-family: "Inter", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 11px;
-    line-height: 19.36px;
+    line-height: 13.31px;
     letter-spacing: 0;
   }
   .section__description-info-date-mobile {
@@ -513,17 +395,23 @@ header {
     flex-direction: column;
     gap: 4px;
   }
+  .section__description-info-day-mobile {
+    width: 18px;
+    height: 12px;
+  }
   .section__description-info-event-mobile {
     display: flex;
   }
   .section__description-info-divider-mobile {
-    margin: 0 10px;
+    width: 2px;
+    height: 33.43px;
+    margin: 0 7px;
   }
   .section__description-info-month-mobile {
     font-family: "Inter", sans-serif;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 21.78px;
+    font-size: 12px;
+    line-height: 14.52px;
     letter-spacing: 0;
     text-align: center;
   }
@@ -617,6 +505,30 @@ header {
     top: 83%;
     left: 55%;
     animation: none;
+  }
+}
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+@keyframes reverseMoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes reverseSlowMoveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
   }
 }
 

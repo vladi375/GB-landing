@@ -1,13 +1,1 @@
-<svg width="2" height="53" viewBox="0 0 2 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1V52" stroke="url(#paint0_linear_108_8627)" stroke-width="2" stroke-linecap="round"/>
-<defs>
-<linearGradient id="paint0_linear_108_8627" x1="1.5" y1="1" x2="1.5" y2="52" gradientUnits="userSpaceOnUse">
-<stop stop-color="#FCF6D1"/>
-<stop offset="0.104167" stop-color="#BD9457"/>
-<stop offset="0.25" stop-color="#E3CA89"/>
-<stop offset="0.697917" stop-color="#FEE8C8"/>
-<stop offset="0.854167" stop-color="#4D3A1A"/>
-<stop offset="1" stop-color="#FCF0D1"/>
-</linearGradient>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="2" height="53" fill="none"><path stroke="url(#a)" stroke-linecap="round" stroke-width="2" d="M1 1v51"/><defs><linearGradient id="a" x1="1.5" x2="1.5" y1="1" y2="52" gradientUnits="userSpaceOnUse"><stop stop-color="#FCF6D1"/><stop offset=".104" stop-color="#BD9457"/><stop offset=".25" stop-color="#E3CA89"/><stop offset=".698" stop-color="#FEE8C8"/><stop offset=".854" stop-color="#4D3A1A"/><stop offset="1" stop-color="#FCF0D1"/></linearGradient></defs></svg>
